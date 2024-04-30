@@ -62,7 +62,7 @@ def main(args): # use as args['name']
 						tipo = 'linguistic complexity'
 						tipo_1 = 'Complexity scores'
 				else:
-					print 'Provide an output file generated from complexity or entropy analysis'
+					print ('Provide an output file generated from complexity or entropy analysis')
 					raise SystemExit
 				#end if
 			elif line.startswith('>'): 
@@ -84,7 +84,7 @@ def main(args): # use as args['name']
 
 	#Print output to file
 	with open(args['outputfile'], 'w') as fo:
-		for key, value in dict_hits.iteritems():
+		for key, value in dict_hits.items():
 			fo.write('track type=wiggle_0 name="{0} {1}, windows {2} - shift {3}"'.format(key, tipo_1, win_len, shift)) 
 			fo.write(' description="{0} scores" visibility=full color=50,150,255\n'.format(tipo))
 			#fo.write(' visibility=full autoScale=off viewLimits=0.0:25.0 color=50,150,255 yLineMark=11.76 yLineOnOff=on priority=10')
